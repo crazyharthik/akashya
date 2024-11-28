@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://clipart-library.com/images_k/heart-symbol-transparent/heart-symbol-transparent-6.png" type="image/png">
+    <title>Hey Andikurumbaluraa!! ❤️</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Candara', 'Oswald', sans-serif;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4); /* Soft pastel pink */
+            color: white;
+            text-align: center;
+            overflow-x: hidden;
+            height: 100vh;
+        }
+
+        h1 {
+            margin-top: 20px;
+            font-size: 40px;
+            font-weight: bold;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        p {
+            font-size: 22px;
+            margin: 10px 20px;
+            animation: fadeIn 3s ease-in-out;
+            line-height: 1.6;
+        }
+
+        img {
+            display: block;
+            margin: 20px auto;
+            width: 25%;
+            max-width: 300px;
+            border-radius: 50%;
+            animation: bounce 3s infinite;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Buttons */
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        button {
+            padding: 15px 25px;
+            font-size: 18px;
+            font-weight: bold;
+            border: none;
+            border-radius: 25px;
+            color: white;
+            cursor: pointer;
+            transition: 0.3s ease;
+            background: linear-gradient(45deg, #ff69b4, #ff1493); /* Pink gradient */
+        }
+
+        button:hover {
+            background: linear-gradient(45deg, #ff1493, #ff69b4);
+            transform: translateY(-5px);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            img {
+                width: 50%;
+            }
+            h1 {
+                font-size: 28px;
+            }
+            p {
+                font-size: 18px;
+            }
+            button {
+                font-size: 16px;
+                padding: 12px 20px;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <h1>{{ currentHeaderText }}</h1>
+        <p>
+            Every moment with you feels like a beautiful chapter in our love story. 📖❤️ <br>
+            I'm so grateful for everything we share, and I can't wait to continue writing our story together, forever. ✍️💫
+        </p>
+        <img src="https://i.postimg.cc/DZkw7g5n/output-onlinegiftools.gif" alt="Cute Cat">
+        <p>
+            "My love, the moon may shine from afar, 🌙 <br> 
+            but it’s you who makes my world light up, bringing me closer to happiness every single day. ✨😊💖"
+        </p>
+        <div class="buttons">
+            <button class="yes-button" @click="yesButton">Yes, forever together ❤️</button>
+            <button class="no-button" @click="changeText">Not yet, but always near 💕</button>
+        </div>
+    </div>
+    
+
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                headerText: [
+                    "Adiye Andikurumbaluraa!! ❤️",
+                    "Are you sure?",
+                    "Really sure?",
+                    "Think again...",
+                    "Last chance!",
+                    "Surely not?",
+                    "You might regret this...",
+                    "Give it another thought!",
+                    "This could be a mistake!",
+                    "Don't be so cold...",
+                    "Wouldn't you reconsider?",
+                    "Is that your final answer?",
+                    "You're breaking my heart :("
+                ],
+                currentHeaderTextIndex: 0,
+            },
+            methods: {
+                changeText() {
+                    this.currentHeaderTextIndex =
+                        (this.currentHeaderTextIndex + 1) % this.headerText.length;
+                },
+                yesButton() {
+                    window.location.href = "yes.html";
+                }
+            },
+            computed: {
+                currentHeaderText() {
+                    return this.headerText[this.currentHeaderTextIndex];
+                }
+            }
+        });
+    </script>
+</body>
+</html>
